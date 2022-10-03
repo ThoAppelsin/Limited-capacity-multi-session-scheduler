@@ -10,11 +10,11 @@ from math import comb
 
 ### import data
 
-files = Path('./data').glob('*.xlsx')
+files = Path('./data').glob('*.csv')
 dfs = []
 
 for f in files:
-	df = pd.read_excel(f, index_col=None, header=0)
+	df = pd.read_csv(f, index_col=None, header=0)
 	df['file'] = f.stem
 	dfs.append(df)
 
